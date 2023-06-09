@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>个人资料</title>
+    <meta name="keywords">
+    <meta name="description">
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                               <img width="64px" height="64px" alt="image" class="img-circle" src="img/head.jpg"/>
+                            </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:event.preventDefault()">
+                                <span class="clear"> <span class="block m-t-xs"> <strong
+                                        class="font-bold" id="user-name"></strong>
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">个人资料</a></li>
+                            <li class="divider"></li>
+                            <li><a href="updatepwd.html">修改密码</a></li>
+                            <li class="divider"></li>
+                            <li><a href="recharge.html">账户充值</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">安全退出</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        H+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">主页</span> <span
+                            class="label label-danger pull-right"></span></a>
+                </li>
+                <li>
+                <li>
+                    <a href="bookshelf.html"><i class="fa fa-book"></i> <span class="nav-label">订购教材</span>
+                        <span class="label label-danger pull-right"></span></a>
+                </li>
+
+                <li>
+                    <a href="book_record.html"><i class="fa fa-recycle"></i> <span class="nav-label">订购记录</span>
+                        <span class="label label-danger pull-right"></span></a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-empire"></i> <span class="nav-label">用户管理</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="login.html">用户登录</a>
+                        </li>
+                        <li><a href="register.html">用户注册</a>
+                        </li>
+                        <li><a href="profile.html">用户中心</a>
+                        </li>
+                        <li><a href="updatepwd.html">修改密码</a>
+                        </li>
+                        <li><a href="recharge.html">账户充值</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">查看教材</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="category.html?categoryId=97871000"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">计算机专业教材</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+                        <li>
+                            <a href="category.html?categoryId=97872000"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">机械专业教材</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+
+                        <li>
+                            <a href="querybook.html"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">教材查询</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-table"></i> <span class="nav-label">管理员操作</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="verify_book.html">审批教材订单</a>
+                        </li>
+                        <li><a href="edit_book.html">编辑教材</a>
+                        </li>
+                        <li><a href="add_book.html">添加教材</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg dashbard-1" style="height: auto">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+                       href="javascript:event.preventDefault()"><i
+                            class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                            <span class="m-r-sm text-muted welcome-message"><a href="index.html" title="返回首页"><i
+                                    class="fa fa-home"></i></a>欢迎来到教材管理系统</span>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 退出
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>用户中心</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">用户管理</a>
+                    </li>
+                    <li>
+                        <strong>用户中心</strong>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInRight">
+                <div class="col-md-5">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>用户中心</h5>
+                        </div>
+                        <div>
+                            <div class="ibox-content no-padding border-left-right">
+                                <img alt="image" class="img-responsive" src="img/profile_big.jpg">
+                            </div>
+                            <div class="ibox-content profile-content">
+                                <h4><strong class="user-name"></strong></h4>
+                                <p><i class="fa fa-map-marker"></i> 浙江省绍兴市</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>个人信息修改</h5>
+                        </div>
+                        <br/><br/>
+                        <form id="form-change-info" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">角色：</label>
+                                <div class="col-md-8">
+                                    <input id="role" name="role" type="text" class="form-control" value=""
+                                           readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">状态：</label>
+                                <div class="col-md-8">
+                                    <input id="status" name="status" type="text" class="form-control" value=""
+                                           readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">姓名：</label>
+                                <div class="col-md-8">
+                                    <input id="username" name="name" type="text" class="form-control" placeholder="请输入姓名" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">账户余额：</label>
+                                <div class="col-md-8">
+                                    <input id="money" name="money" type="text" readonly="readonly" class="form-control" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">所在学院：</label>
+                                <div class="col-md-8">
+                                    <input id="academy" name="academy" type="text" class="form-control"
+                                           placeholder="请输入所在学院" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">执教学院：</label>
+                                <div class="col-md-8">
+                                    <input id="classes" name="classes" type="text" class="form-control"
+                                           placeholder="请输入执教班级" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">生日：</label>
+                                <div class="col-md-8">
+                                    <input id="birthday" name="birthday" type="text" class="form-control"
+                                           placeholder="请输入生日" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">性别：</label>
+                                <div class="col-md-8">
+                                    <label class="radio-inline">
+                                        <input id="gender-male" type="radio" name="sex" value="1">男
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input id="gender-female" type="radio" name="sex" value="0">女
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <input id="btn-change-info" type="button" class="btn btn-primary" value="修改"/>
+                                    <input id="btn-to-recharge" type="button" class="btn btn-primary" value="账户充值"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <strong>计科203 李慧风</strong> 2023-05
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js?v=3.4.0"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/hplus.js?v=2.2.0"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script src="js/plugins/peity/jquery.peity.min.js"></script>
+<script src="js/demo/peity-demo.js"></script>
+<script>
+    $(document).ready(function () {
+        let name = sessionStorage.getItem("name")
+        let role = name === null ? "请填写用户姓名" : name
+        $('#user-name').text(role)
+
+        let code = sessionStorage.getItem("code")
+        $.ajax({
+            url: '/users/getUserInfo',
+            type: 'GET',
+            dataType: 'JSON',
+            data: {'code': code},
+            error: function (xhr) {
+                alert("请重新登录")
+                window.location = "./login.html"
+            },
+            success: function (json) {
+                if (json.state == 200) {
+                    $('#username').val(json.data.name)
+                    $('#academy').val(json.data.academy)
+                    $('#birthday').val(json.data.birthday)
+                    $('#classes').val(json.data.classes)
+                    $('#money').val(json.data.money+"元")
+                    if (json.data.role == 1) {
+                        $('#role').val("教材科")
+                    } else {
+                        $('#role').val("教师")
+                    }
+                    if (json.data.status === 1) {
+                        $('#status').val("正常")
+                    } else {
+                        $('#status').val("锁定")
+                    }
+                    var flag = json.data.sex == 0 ? $('#gender-female') : $('#gender-male')
+                    flag.prop("checked", "checked")
+                } else {
+                    alert(json.message)
+                    location.href = "login.html"
+                }
+            },
+        })
+
+        $('#btn-to-recharge').click(function (){
+            location.href='recharge.html'
+        })
+        $('#btn-change-info').click(function () {
+            updateUserInfo()
+        })
+
+    })
+
+    function updateUserInfo() {
+        if ($('#role').val("管理员")) {
+            $('#role').val(1)
+        } else {
+            $('#role').val(2)
+        }
+        if ($('#status').val(1)) {
+            $('#status').val(1)
+        } else {
+            $('#status').val(2)
+        }
+        let s = $('#money').val()
+        $('#money').val(s.slice(0,s.length-1))
+        $.ajax({
+            type: 'POST',
+            dataType: 'JSON',
+            url: 'users/updateUserInfo',
+            data: $('#form-change-info').serialize(),
+            success: function (json) {
+                if (json.state === 200) {
+                    alert("修改信息成功")
+                    sessionStorage.setItem("name", json.data.name)
+                    sessionStorage.setItem("code", json.data.code)
+                    sessionStorage.setItem("money", json.data.money)
+                    location.reload()
+                } else {
+                    alert(json.message)
+                }
+            },
+            error: function (xhr) {
+            }
+        })
+    }
+</script>
+</body>
+</html>

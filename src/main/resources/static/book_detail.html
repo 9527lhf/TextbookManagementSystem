@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>教材详情</title>
+    <meta name="keywords">
+    <meta name="description">
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+    <style>
+        th {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                               <img width="64px" height="64px" alt="image" class="img-circle" src="img/head.jpg"/>
+                            </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:event.preventDefault()">
+                                <span class="clear"> <span class="block m-t-xs"> <strong
+                                        class="font-bold" id="user-name"></strong>
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">个人资料</a></li>
+                            <li class="divider"></li>
+                            <li><a href="updatepwd.html">修改密码</a></li>
+                            <li class="divider"></li>
+                            <li><a href="recharge.html">账户充值</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">安全退出</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        H+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">主页</span> <span
+                            class="label label-danger pull-right"></span></a>
+                </li>
+                <li>
+                <li>
+                    <a href="bookshelf.html"><i class="fa fa-book"></i> <span class="nav-label">订购教材</span>
+                        <span class="label label-danger pull-right"></span></a>
+                </li>
+
+                <li>
+                    <a href="book_record.html"><i class="fa fa-recycle"></i> <span class="nav-label">订购记录</span>
+                        <span class="label label-danger pull-right"></span></a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-empire"></i> <span class="nav-label">用户管理</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="login.html">用户登录</a>
+                        </li>
+                        <li><a href="register.html">用户注册</a>
+                        </li>
+                        <li><a href="profile.html">用户中心</a>
+                        </li>
+                        <li><a href="updatepwd.html">修改密码</a>
+                        </li>
+                        <li><a href="recharge.html">账户充值</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">查看教材</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="category.html?categoryId=97871000"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">计算机专业教材</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+                        <li>
+                            <a href="category.html?categoryId=97872000"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">机械专业教材</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+
+                        <li>
+                            <a href="querybook.html"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">教材查询</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-table"></i> <span class="nav-label">管理员操作</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="verify_book.html">审批教材订单</a>
+                        </li>
+                        <li><a href="edit_book.html">编辑教材</a>
+                        </li>
+                        <li><a href="add_book.html">添加教材</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+                       href="javascript:event.preventDefault()"><i
+                            class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                            <span class="m-r-sm text-muted welcome-message"><a href="index.html" title="返回首页"><i
+                                    class="fa fa-home"></i></a>欢迎来到教材管理系统</span>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 退出
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-sm-4">
+                <h2>教材详情</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <strong>/教材详情</strong>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" style="height: auto">
+                <div class="wrapper wrapper-content animated fadeInUp">
+                    <div class="ibox">
+                        <table class="table table-hover">
+                            <div class="ibox-heading">
+                                <thead>
+                                <th>教材图片</th>
+                                <th>教材简介</th>
+                                </thead>
+                            </div>
+                            <tbody class="ibox-content" id="ibox-name"
+                                   style="font-size: 15px;line-height: 2.5rem;text-indent: 2rem;letter-spacing: 2px"></tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <table class="table table-hover" style="text-align: center;">
+                            <div class="ibox-heading">
+                                <thead>
+                                <th>教材名称</th>
+                                <th>教材作者</th>
+                                <th>出版社</th>
+                                <th>出版时间</th>
+                                <th>教材页数</th>
+                                <th>教材价格</th>
+                                <th>库存状态</th>
+                                <th>订购数量</th>
+                                <th>操作</th>
+                                </thead>
+                            </div>
+                            <tbody class="ibox-content" id="ibox-des"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <strong>计科203 李慧风</strong> 2023-05
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js?v=3.4.0"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/hplus.js?v=2.2.0"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#user-name').text(sessionStorage.getItem("name"))
+        getBook()
+    })
+    function getBook() {
+        let param = getUrlParams(location.href)
+        let id = parseInt(param.id)
+        $.ajax({
+            url: '/textbook/getBookById',
+            dataType: 'JSON',
+            type: 'GET',
+            data: {'id': id},
+            success: function (json) {
+                let list = json.data;
+                let html = "                    <tr>\n" +
+                    "                        <td style='vertical-align: middle'>#{bname}</td>\n" +
+                    "                        <td style='vertical-align: middle'>#{author}</td>\n" +
+                    "                        <td style='vertical-align: middle'>#{publisher}</td>\n" +
+                    "                        <td style='vertical-align: middle'>#{publishTime}</td>\n" +
+                    "                        <td style='vertical-align: middle'>#{pagination} 页</td>\n" +
+                    "                        <td style='vertical-align: middle'>#{price} 元</td>\n" +
+                    "                        <td style='vertical-align: middle'>#{inventory} 本</td>\n" +
+                    "                        <td style='vertical-align: middle'> <input name='num' type=\"number\" style='width: 100px;' class=\"form-control\" id=\"num\" value='1'> </td>\n" +
+                    "                        <td style='vertical-align: middle'><button id='btn-disabledn' onclick='orderBook(#{id})' class='btn btn-primary'>订购</button> </td>\n" +
+                    "                    </tr>";
+
+                let title_textbook = "                    <tr>\n" +
+                    // "                        <td style='vertical-align: middle'>#{bname}</td>\n" +
+                    "                        <td style='vertical-align: middle'><img style='width: 160px;height: 180px' src=\"#{img}\"></td>\n" +
+                    "                        <td style='vertical-align: middle'>#{description}</td>\n" +
+                    "                    </tr>";
+                html = html.replace(/#{id}/g, list.id + "");
+                // html = html.replace(/#{img}/g, list.img);
+                html = html.replace(/#{bname}/g, list.bname);
+                html = html.replace(/#{author}/g, list.author);
+                html = html.replace(/#{inventory}/g, list.inventory);
+                html = html.replace(/#{publisher}/g, list.publisher);
+                html = html.replace(/#{pagination}/g, list.pagination);
+                html = html.replace(/#{publishTime}/g, list.publishTime);
+                html = html.replace(/#{price}/g, list.price);
+                $('#ibox-des').append(html)
+                title_textbook = title_textbook.replace(/#{description}/g, list.description);
+                // title_textbook = title_textbook.replace(/#{bname}/g, list.bname);
+                title_textbook = title_textbook.replace(/#{img}/g, list.img);
+                $('#ibox-name').append(title_textbook)
+            },
+            error: function (xhr) {
+            }
+        })
+    }
+
+    function orderBook(id) {
+        //验证订购数量是否正确
+        let num = $('#num').val()
+        if (num === 0) {
+            alert("请至少订购一本")
+            location.reload()
+        } else if (num < 0) {
+            alert("请输入正确的订购数量")
+            location.reload()
+        }
+
+        $.ajax({
+            url: '/order/orderbook',
+            dataType: 'JSON',
+            type: 'POST',
+            data: {
+                'id': parseInt(id),
+                'num': parseInt(num)
+            },
+            success: function (json) {
+                alert(json.message)
+                if(json.state !== 200){
+                    location.reload()
+                }
+                location.href="bookshelf.html"
+            },
+            error: function (xhr) {
+            },
+        })
+    }
+
+    //分割url参数
+    function getUrlParams(url) {
+        // 通过 ? 分割获取后面的参数字符串
+        let urlStr = url.split('?')[1]
+        // 创建空对象存储参数
+        let obj = {};
+        // 再通过 & 将每一个参数单独分割出来
+        let paramsArr = urlStr.split('&')
+        for (let i = 0, len = paramsArr.length; i < len; i++) {
+            // 再通过 = 将每一个参数分割为 key:value 的形式
+            let arr = paramsArr[i].split('=')
+            obj[arr[0]] = arr[1];
+        }
+        return obj;
+    }
+</script>
+</body>
+</html>

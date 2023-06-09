@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>订购教材</title>
+    <meta name="keywords">
+    <meta name="description">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+    <style>
+        .img-pic {
+            width: 80px;
+            height: 100px;
+        }
+
+        h4 {
+            font-size: 12px;
+        }
+
+        th {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                               <img width="64px" height="64px" alt="image" class="img-circle" src="img/head.jpg"/>
+                            </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:event.preventDefault()">
+                                <span class="clear"> <span class="block m-t-xs"> <strong
+                                        class="font-bold" id="user-name"></strong>
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">个人资料</a></li>
+                            <li class="divider"></li>
+                            <li><a href="updatepwd.html">修改密码</a></li>
+                            <li class="divider"></li>
+                            <li><a href="recharge.html">账户充值</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">安全退出</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        H+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">主页</span> <span
+                            class="label label-danger pull-right"></span></a>
+                </li>
+                <li>
+                <li>
+                    <a href="bookshelf.html"><i class="fa fa-book"></i> <span class="nav-label">订购教材</span>
+                        <span class="label label-danger pull-right"></span></a>
+                </li>
+
+                <li>
+                    <a href="book_record.html"><i class="fa fa-recycle"></i> <span class="nav-label">订购记录</span>
+                        <span class="label label-danger pull-right"></span></a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-empire"></i> <span class="nav-label">用户管理</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="login.html">用户登录</a>
+                        </li>
+                        <li><a href="register.html">用户注册</a>
+                        </li>
+                        <li><a href="profile.html">用户中心</a>
+                        </li>
+                        <li><a href="updatepwd.html">修改密码</a>
+                        </li>
+                        <li><a href="recharge.html">账户充值</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">查看教材</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="category.html?categoryId=97871000"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">计算机专业教材</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+                        <li>
+                            <a href="category.html?categoryId=97872000"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">机械专业教材</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+
+                        <li>
+                            <a href="querybook.html"><i class="fa fa-th-large"></i> <span
+                                    class="nav-label">教材查询</span> <span
+                                    class="label label-danger pull-right"></span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-table"></i> <span class="nav-label">管理员操作</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="verify_book.html">审批教材订单</a>
+                        </li>
+                        <li><a href="edit_book.html">编辑教材</a>
+                        </li>
+                        <li><a href="add_book.html">添加教材</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+                       href="javascript:event.preventDefault()"><i
+                            class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                            <span class="m-r-sm text-muted welcome-message"><a href="index.html" title="返回首页"><i
+                                    class="fa fa-home"></i></a>欢迎来到教材管理系统</span>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 退出
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row  border-bottom white-bg dashboard-header">
+            <div class="col-lg-10">
+                <h2>订购教材</h2>
+            </div>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading" id="book-list">
+            <div class="col-lg-12">
+                <table class="table table-hover" style="text-align: center;">
+                    <thead>
+                    <th>序 号</th>
+                    <th>教材名称</th>
+                    <th>教材图片</th>
+                    <th>订购用户</th>
+                    <th>订购时间</th>
+                    <th>订购数量</th>
+                    <th>订购金额</th>
+                    <th>订单状态</th>
+                    <th>操 作</th>
+                    </thead>
+                    <tbody class="table-coat"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <strong>计科203 李慧风</strong> 2023-05
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js?v=3.4.0"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/hplus.js?v=2.2.0"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let name = sessionStorage.getItem("name")
+        let role = name === null ? "请填写用户姓名" : name
+        $('#user-name').text(role)
+        $.ajax({
+            type: 'GET',
+            url: '/order/getOrderBook',
+            dataType: 'JSON',
+            success: function (res) {
+                if (res.state == 400) {
+                    alert(res.message)
+                    location.href = "login.html"
+                }
+                let list = res.data;
+                console.log(list)
+                for (let i = 0; i < list.length; i++) {
+                    let html = "                    <tr>\n" +
+                        "                        <td style='vertical-align: middle'>#{i}</td>\n" +
+                        "                        <td style='vertical-align: middle'>#{bname}</td>\n" +
+                        "                        <td style='vertical-align: middle'><img class='img-pic' src=\"#{bimg}\"></td>\n" +
+                        "                        <td style='vertical-align: middle'>#{name}</td>\n" +
+                        "                        <td style='vertical-align: middle'>#{orderTime}</td>\n" +
+                        "                        <td style='vertical-align: middle'>#{num}</td>\n" +
+                        "                        <td style='vertical-align: middle'>#{price}</td>\n" +
+                        "                        <td style='vertical-align: middle'>#{status}</td>\n" +
+                        "                        <td style='vertical-align: middle'><button id='btn-pay' onclick='pay(#{id})' class='btn btn-primary'>支付</button> <button id='btn-unsubscribe' onclick='orderback(#{id})' class='btn btn-primary'>退订</button> </td>\n" +
+                        "                    </tr>"
+                    html = html.replace(/#{i}/g, i + 1);
+                    html = html.replace(/#{id}/g, list[i].id + "");
+                    html = html.replace(/#{bimg}/g, list[i].bimg);
+                    html = html.replace(/#{bname}/g, list[i].bname);
+                    html = html.replace(/#{name}/g, list[i].name);
+                    html = html.replace(/#{orderTime}/g, list[i].orderTime);
+                    html = html.replace(/#{num}/g, list[i].num + "本");
+                    html = html.replace(/#{price}/g, list[i].price);
+                    if (list[i].status === 0) {
+                        html = html.replace(/#{status}/g, "待用户支付");
+                    } else if (list[i].status === 1) {
+                        html = html.replace(/#{status}/g, "用户已支付,正在由教材科审核");
+                    } else if (list[i].status === 2) {
+                        html = html.replace(/#{status}/g, "教材科审核通过");
+                    } else if (list[i].status === 3) {
+                        html = html.replace(/#{status}/g, "审核未通过");
+                    }
+                    //待完善
+                    // if (list[i].status === 0) {
+                    //     $('#btn-pay').attr('disabled', true)
+                    //     $('#btn-unsubscribe').attr('disabled', true)
+                    // } else if (list[i].status !== 0) {
+                    //     $('#btn-submitbok').attr('disabled', true)
+                    // }
+                    // $('#btn-disabledn').attr('disabled', true) ? list[i].status == 1 : list[i].status != 1
+                    $('.table-coat').append(html)
+                }
+            },
+            error: function (xhr) {
+            }
+        })
+    })
+
+
+    function pay(id) {
+        $.ajax({
+            type: 'GET',
+            url: '/order/pay',
+            dataType: 'JSON',
+            data: {
+                'id': parseInt(id)
+            },
+            success: function (json) {
+                alert(json.message)
+                if (json.state === 5001) {
+                    location.href = "recharge.html"
+                } else {
+                    location.reload()
+                }
+            },
+            error: function (xhr) {
+            }
+        })
+    }
+
+    function orderback(id) {
+        $.ajax({
+            type: 'GET',
+            url: '/order/orderback',
+            dataType: 'JSON',
+            data: {
+                'id': parseInt(id)
+            },
+            success: function (json) {
+                alert(json.message)
+                if (json.state === 5001) {
+                    location.href = "profile.html"
+                } else {
+                    location.reload()
+                }
+            },
+            error: function (xhr) {
+            }
+        })
+    }
+</script>
+</body>
+</html>

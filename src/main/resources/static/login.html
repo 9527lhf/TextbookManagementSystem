@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>用户登录</title>
+    <meta name="keywords">
+    <meta name="description">
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+        <div>
+            <h1 class="logo-name">H+</h1>
+        </div>
+        <h3>欢迎登录</h3>
+        <form class="m-t" role="form" id="login-form">
+            <div class="form-group">
+                <input type="email" name="code" id="log-username" class="form-control" placeholder="教职号"
+                       required="">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="log-password" class="form-control" placeholder="密码"
+                       required="">
+            </div>
+            <div class="form-group">
+                <input id="form-identifyImage" name="identifyCode" placeholder="验证码"
+                       class="form-control" type="text" required="required"
+                       style="width: 50%;float: left">
+                <label class="form-label"></label>
+                <img id="identify-img" src="/users/identifyImage"><br><br>
+            </div>
+            <button type="button" class="btn btn-primary block full-width m-b" id="btn-login">登 录</button>
+            <p class="text-muted text-center"><a href="login.html">
+            </a> <a href="register.html">注册一个新账号</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js?v=3.4.0"></script>
+
+<script>
+    $(document).ready(function () {
+        //单机验证码图片
+        $('#identify-img').click(function () {
+            // 点击验证码那个图片的时候输入的验证码那个框就会清空
+            $('#form-identifyImage').val('')
+            //而且我们点击验证码的时候通过发送新请求来改变验证码内容
+            $('#identify-img').attr('src', '/users/identifyImage?' + Math.random())
+        })
+
+        // 单击登录按钮执行登录业务
+        $('#btn-login').click(function () {
+            if ($('#log-username').val() === "") {
+                alert("用户名不能为空")
+            } else if ($('#log-password').val() === "") {
+                alert("密码不能为空")
+            } else if ($('#form-identifyImage').val() === "") {
+                alert("验证码不能为空")
+            } else {
+                login()
+            }
+        })
+    })
+
+    function login() {
+        $.ajax({
+            type: 'POST',
+            url: '/users/login',
+            dataType: 'JSON',
+            data: $('#login-form').serialize(),
+            async: true,
+            success: function (res) {
+                if (res.state !== 200) {
+                    alert(res.message)
+                    location.reload()
+                } else {
+                    sessionStorage.setItem("name", res.data.name)
+                    sessionStorage.setItem("code", res.data.code)
+                    sessionStorage.setItem("money", res.data.money)
+                    location.href = ("index.html")
+                }
+            },
+            error: function (xhr) {
+                console.log(xhr)
+            }
+        })
+    }
+</script>
+
+</body>
+
+</html>

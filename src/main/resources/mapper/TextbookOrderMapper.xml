@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace属性：用于指定当前的映射文件和哪个接口进行映射。需要指定接口的文件路径-->
+<mapper namespace="com.lhf.library.mapper.TextbookOrderMapper">
+
+    <resultMap id="order" type="com.lhf.library.entity.TextbookOrder">
+        <id property="id" column="id"/>
+        <result property="orderTime" column="order_time"/>
+    </resultMap>
+    <insert id="insertTextbook">
+        insert into l_textbook_order (bid, bname, bimg, code, name, order_time, num, price, status)
+        VALUES (#{bid}, #{bname}, #{bimg}, #{code}, #{name}, #{orderTime}, #{num}, #{price}, #{status})
+    </insert>
+
+    <select id="selectOrderBookByCode" resultMap="order">
+        select *
+        from l_textbook_order
+        where code = #{code}
+        ORDER BY order_time desc
+    </select>
+
+    <select id="selectOrderBookByNormal" resultMap="order">
+        select *
+        from l_textbook_order
+        where code = #{code} and (STATUS !=2 and STATUS !=4)
+        ORDER BY order_time desc
+    </select>
+
+    <select id="selectOrderBookById" resultMap="order">
+        select *
+        from l_textbook_order
+        where id = #{id}
+    </select>
+
+
+    <update id="updateOrderStatusByPay">
+        update l_textbook_order
+        set status = 1
+        where id = #{id}
+    </update>
+
+    <delete id="deleteOrderById">
+        delete
+        from l_textbook_order
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteOrderByBId">
+        delete
+        from l_textbook_order
+        where bid = #{bid}
+    </delete>
+
+    <update id="updateOrderByIdTo2">
+        update l_textbook_order
+        set status = 2
+        where id = #{id}
+    </update>
+
+    <update id="updateOrderByIdTo3">
+        update l_textbook_order
+        set status = 3
+        where id = #{id}
+    </update>
+
+    <update id="updateOrderByIdTo4">
+        update l_textbook_order
+        set status = 4
+        where id = #{id}
+    </update>
+
+    <select id="selectOrder" resultMap="order">
+        select *
+        from l_textbook_order
+        where status = 1
+    </select>
+
+</mapper>

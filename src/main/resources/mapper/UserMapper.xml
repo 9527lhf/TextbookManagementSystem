@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace属性：用于指定当前的映射文件和哪个接口进行映射。需要指定接口的文件路径-->
+<mapper namespace="com.lhf.library.mapper.UserMapper">
+
+
+    <insert id="insertUser">
+        insert into l_user(name, password, salt, code, sex, birthday, classes, academy, role, status,money)
+        VALUES (#{name}, #{password}, #{salt}, #{code}, #{sex}, #{birthday}, #{classes}, #{academy}, #{role}, #{status},#{money})
+    </insert>
+
+    <select id="selectUser" resultType="User">
+        select *
+        from l_user
+        where code = #{code}
+          and password = #{password}
+    </select>
+
+    <select id="selectUserById" resultType="User">
+        select *
+        from l_user
+        where id = #{id}
+    </select>
+
+    <select id="selectUserByCode" resultType="User">
+        select *
+        from l_user
+        where code = #{code}
+    </select>
+
+    <update id="updateUserInfo">
+        update l_user set
+        <if test="academy!=null">academy = #{academy},</if>
+        <if test="name!=null">name = #{name},</if>
+        <if test="birthday!= null">birthday = #{birthday},</if>
+        <if test="classes!= null">classes = #{classes},</if>
+        <if test="sex!= null">sex = #{sex}</if>
+        where code = #{code} and status !=0
+    </update>
+
+    <update id="updatePassword">
+        update l_user set
+        <if test="salt!=null">salt = #{salt},</if>
+        <if test="password!=null">password = #{password}</if>
+        where code = #{code} and status !=0
+    </update>
+
+    <update id="updateUserMoney">
+        update l_user
+        set money = #{money}
+        where code = #{code}
+    </update>
+
+</mapper>
